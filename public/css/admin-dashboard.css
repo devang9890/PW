@@ -1,14 +1,21 @@
+@import url('./colors.css');
+
 :root {
-  --primary-color: #3b82f6;
-  --secondary-color: #a29bfe;
-  --background-dark: #1a1a1a;
-  --background-light: #2d2d2d;
-  --text-primary: #ffffff;
-  --text-secondary: #b3b3b3;
-  --success-color: #00b894;
-  --warning-color: #fdcb6e;
-  --danger-color: #d63031;
-  --border-color: #404040;
+  --primary-color: var(--primary);
+  --secondary-color: var(--primary-light);
+  --background-dark: var(--background);
+  --background-light: var(--primary-light);
+  --text-primary: var(--primary-light);
+  --text-secondary: var(--primary);
+  --success-color: var(--primary);
+  --warning-color: var(--primary);
+  --danger-color: var(--dark);
+  --border-color: var(--dark);
+  --primary-gradient: linear-gradient(to right, var(--background), var(--dark));
+  --background-dark: var(--background);
+  --background-light: var(--primary-light);
+  --text-color: var(--primary-light);
+  --text-light: var(--primary);
 }
 
 * {
@@ -20,7 +27,7 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-dark);
-  color: var(--text-primary);
+  color: var(--primary-light);
   line-height: 1.6;
   }
   
@@ -32,7 +39,7 @@ body {
 /* Sidebar Styles */
 .sidebar {
   width: 250px;
-  background: linear-gradient(to right, #0f172a, #1e3a8a);
+  background: linear-gradient(to right, var(--background), var(--dark));
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -49,7 +56,7 @@ body {
 
 .logo i {
   font-size: 1.5rem;
-  color: #60a5fa;
+  color: var(--primary);
 }
 
 .logo span {
@@ -72,7 +79,7 @@ body {
   align-items: center;
   gap: 1rem;
   padding: 0.8rem 1rem;
-  color: #cbd5e1;
+  color: var(--primary-light);
   text-decoration: none;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -80,7 +87,7 @@ body {
 
 .nav-links li.active a,
 .nav-links a:hover {
-  background-color: #3b82f6;
+  background-color: var(--primary);
   color: var(--text-primary);
 }
 
@@ -98,7 +105,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #ef4444;
+  color: var(--danger-color);
   text-decoration: none;
   padding: 0.5rem;
   border-radius: 8px;
@@ -106,7 +113,7 @@ body {
 }
 
 .logout a:hover {
-  background-color: #d63031;
+  background-color: var(--danger-color);
   color: var(--text-primary);
 }
 
@@ -279,10 +286,11 @@ body {
   padding: 1rem;
     text-align: left;
   border-bottom: 1px solid var(--border-color);
+  color: var(--dark) !important;
   }
   
   th {
-  color: var(--text-secondary);
+  color: var(--dark) !important;
   font-weight: 500;
   }
   
@@ -290,6 +298,7 @@ body {
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
+  color: var(--dark) !important;
 }
 
 .status-badge.active {
@@ -297,10 +306,15 @@ body {
   color: white;
 }
 
+.status-badge.pending {
+  background-color: var(--warning-color);
+  color: black;
+  }
+
 .action-btn {
   background: none;
   border: none;
-  color: var(--text-secondary);
+  color: var(--dark) !important;
   cursor: pointer;
   padding: 0.5rem;
   transition: color 0.3s ease;

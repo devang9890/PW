@@ -1,3 +1,5 @@
+@import url('./colors.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #0f172a, #1e3a8a);
-    color: white;
+    background: linear-gradient(135deg, var(--background) 0%, var(--dark) 100%);
+    color: var(--primary-light);
     padding: 20px;
   }
   
@@ -22,15 +24,15 @@
   }
   
   .login-card {
-    background-color: #1e293b;
+    background-color: var(--background);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 2px var(--primary);
     transform-style: preserve-3d;
   }
   
   h2 {
-    color: #3b82f6;
+    color: var(--accent);
     text-align: center;
     margin-bottom: 30px;
     font-size: 28px;
@@ -43,7 +45,7 @@
   label {
     display: block;
     margin-bottom: 8px;
-    color: #cbd5e1;
+    color: var(--primary);
     font-weight: 500;
   }
   
@@ -53,21 +55,21 @@
     border: none;
     border-radius: 8px;
     font-size: 16px;
-    background-color: #0f172a;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--primary-light);
     transition: all 0.3s ease;
   }
   
   input:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #3b82f6;
+    box-shadow: 0 0 0 2px var(--primary);
   }
   
   .login-btn {
     width: 100%;
     padding: 14px;
-    background-color: #3b82f6;
-    color: white;
+    background-color: var(--primary);
+    color: var(--primary-light);
     border: none;
     border-radius: 8px;
     font-size: 16px;
@@ -77,26 +79,26 @@
   }
   
   .login-btn:hover {
-    background-color: #2563eb;
+    background-color: var(--primary);
     transform: translateY(-2px);
   }
   
   .note {
     text-align: center;
     margin-top: 20px;
-    color: #94a3b8;
+    color: var(--accent);
     font-size: 14px;
   }
   
   .note a.switch-form {
-    color: #3b82f6;
+    color: var(--accent);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
   }
   
   .note a.switch-form:hover {
-    color: #60a5fa;
+    color: var(--primary);
     text-decoration: underline;
   }
   
@@ -105,10 +107,10 @@
     top: 20px;
     right: 20px;
     padding: 10px 20px;
-    background: rgba(30, 41, 59, 0.9);
+    background: var(--background);
     border: none;
     border-radius: 8px;
-    color: #3b82f6;
+    color: var(--primary);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -116,7 +118,7 @@
   }
   
   .role-switch-btn:hover {
-    background: #1e293b;
+    background: var(--background);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   }
@@ -130,16 +132,48 @@
   .toggle-password {
     position: absolute;
     right: 12px;
-    background: none;
+    background: var(--background);
     border: none;
-    color: #94a3b8;
+    color: var(--primary-light);
     cursor: pointer;
     padding: 4px;
     transition: color 0.3s ease;
   }
   
   .toggle-password:hover {
-    color: #3b82f6;
+    color: var(--primary);
+  }
+  
+  .toggle-password:focus {
+    outline: none;
+  }
+  
+  .toggle-password i {
+    font-size: 16px;
+  }
+  
+  .login-card {
+    background-color: linear-gradient(to right, var(--primary), var(--primary-dark));
+  }
+  
+  h2 {
+    color: var(--accent);
+  }
+  
+  .note {
+    color: var(--accent);
+  }
+  
+  .note a.switch-form {
+    color: var(--accent);
+  }
+  
+  .role-switch-btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  }
+  
+  .toggle-password {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   }
   
   .toggle-password:focus {

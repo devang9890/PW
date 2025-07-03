@@ -1,3 +1,5 @@
+@import url('./colors.css');
+
 /* General Styles */
 * {
     margin: 0;
@@ -6,15 +8,15 @@
 }
 
 :root {
-    --primary-gradient: linear-gradient(to right, #0f172a, #1e3a8a);
-    --background-dark: #18181b;
-    --background-light: #27272a;
-    --text-color: #f4f4f5;
-    --text-light: #a1a1aa;
-    --border-color: #3f3f46;
-    --success-color: #22c55e;
-    --warning-color: #eab308;
-    --danger-color: #ef4444;
+    --primary-gradient: linear-gradient(to right, var(--background), var(--dark));
+    --background-dark: var(--background);
+    --background-light: var(--primary-light);
+    --text-color: var(--primary-light);
+    --text-light: var(--primary);
+    --border-color: var(--dark);
+    --success-color: #FF9999;
+    --warning-color: #FFC8C8;
+    --danger-color: #444F5A;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --transition: all 0.3s ease;
 }
@@ -22,8 +24,8 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #0f172a, #1e3a8a);
-    color: #e0f2fe;       /* light blue text */
+    background: linear-gradient(to right, var(--background), var(--dark));
+    color: var(--primary-light);
 }
 
 .container {
@@ -34,14 +36,14 @@ body {
 .heading {
     text-align: center;
     font-size: 2.5rem;
-    color: #38bdf8; /* blue */
+    color: var(--primary);
     margin-bottom: 1.5rem;
 }
 
 .dashboard-icon {
     width: 2.5rem; /* Adjust size as needed */
     height: 2.5rem;
-    fill: #38bdf8; /* Icon color */
+    fill: var(--primary);
     vertical-align: middle;
     margin-right: 0.5rem;
 }
@@ -60,7 +62,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: #1e293b;
+    background: var(--background);
     padding: 0.5rem 1.2rem;
     border-radius: 2rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -71,28 +73,28 @@ body {
     margin-right: 12px;
 }
 .profile-section:hover {
-    background: #334155;
+    background: var(--primary);
 }
 #teacherProfileIcon {
-    color: #60a5fa;
+    color: var(--primary);
     width: 32px;
     height: 32px;
 }
 #teacherProfileName {
-    color: #e2e8f0;
+    color: var(--primary-light);
     font-weight: 600;
     font-size: 1.1rem;
 }
 
 .profile-icon {
     font-size: 2.5rem; /* Adjust icon size */
-    color: #7dd3fc;
+    color: var(--primary);
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .profile-icon:hover {
-    color: #38bdf8;
+    color: var(--primary);
 }
 
 .profile-details-modal {
@@ -100,13 +102,13 @@ body {
     position: absolute;
     top: calc(100% + 10px); /* Position below the icon */
     right: 0;
-    background: #1e293b;
+    background: var(--background);
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
     min-width: 250px;
     z-index: 100;
-    color: #e0f2fe;
+    color: var(--primary-light);
 }
 
 .profile-details-modal.active {
@@ -122,11 +124,11 @@ body {
 }
 
 .profile-details-modal strong {
-    color: #7dd3fc;
+    color: var(--primary);
 }
 
 .card {
-    background-color: #1e293b;
+    background-color: var(--background);
     padding: 1.5rem;
     border-radius: 10px;
     margin-bottom: 2rem;
@@ -134,7 +136,7 @@ body {
 }
 
 h2 {
-    color: #7dd3fc;
+    color: var(--primary);
     margin-bottom: 1rem;
 }
 
@@ -146,8 +148,8 @@ form input, form button {
 }
 
 form button {
-    background-color: #3b82f6;
-    color: white;
+    background-color: var(--primary);
+    color: var(--primary-light);
     cursor: pointer;
 }
 
@@ -159,7 +161,7 @@ table {
 
 th, td {
     padding: 0.8rem;
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid var(--dark);
     text-align: left;
 }
 
@@ -172,22 +174,22 @@ th, td {
 }
 
 .approve {
-    background-color: #22c55e; /* green */
-    color: #fff;
+    background-color: var(--success-color);
+    color: var(--primary-light);
 }
 
 .reject {
-    background-color: #ef4444; /* red */
-    color: #fff;
+    background-color: var(--danger-color);
+    color: var(--primary-light);
 }
 
 .approved {
-    color: #22c55e;
+    color: var(--success-color);
 }
 
 .logout {
-    background-color: #dc3545; /* A shade of red for logout */
-    color: white;
+    background-color: var(--danger-color);
+    color: var(--primary-light);
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 8px;
@@ -205,7 +207,7 @@ th, td {
 /* Sidebar Styles */
 .sidebar {
     width: 250px;
-    background-color: #1e293b;
+    background-color: var(--background);
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
@@ -217,7 +219,7 @@ th, td {
 }
 
 .sidebar h2 {
-    color: #60a5fa;
+    color: var(--primary);
     margin-bottom: 2rem;
     font-size: 1.5rem;
     display: flex;
@@ -227,8 +229,8 @@ th, td {
 
 .sidebar button {
     padding: 0.8rem;
-    background-color: #3b82f6;
-    color: white;
+    background-color: var(--primary);
+    color: var(--primary-light);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -240,7 +242,7 @@ th, td {
 }
 
 .sidebar button:hover {
-    background-color: #2563eb;
+    background-color: var(--primary);
     transform: translateX(5px);
 }
 
@@ -253,7 +255,7 @@ th, td {
     flex: 1;
     padding: 2rem;
     margin-left: 250px;
-    background-color: #0f172a;
+    background-color: var(--background);
     min-height: 100vh;
 }
 
@@ -263,12 +265,12 @@ th, td {
     align-items: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--dark);
 }
 
 .content-header h1 {
     font-size: 1.8rem;
-    color: var(--text-color);
+    color: var(--primary-light);
 }
 
 .header-actions {
@@ -285,11 +287,11 @@ th, td {
 .search-bar input {
     width: 100%;
     padding: 0.8rem 1rem 0.8rem 2.5rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--dark);
     border-radius: 8px;
     font-size: 0.9rem;
-    background-color: var(--background-light);
-    color: var(--text-color);
+    background-color: var(--primary);
+    color: var(--primary-light);
 }
 
 .search-bar input::placeholder {
@@ -306,8 +308,8 @@ th, td {
 
 /* Buttons */
 .btn-primary {
-    background-color: #3b82f6;
-    color: white;
+    background-color: var(--primary);
+    color: var(--primary-light);
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 8px;
@@ -318,28 +320,28 @@ th, td {
 }
 
 .btn-primary:hover {
-    background-color: #2563eb;
+    background-color: var(--primary);
 }
 
 .btn-secondary {
     padding: 0.8rem 1.5rem;
-    background-color: var(--background-light);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    background-color: var(--primary);
+    color: var(--primary-light);
+    border: 1px solid var(--dark);
     border-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
 }
 
 .btn-secondary:hover {
-    background-color: var(--border-color);
+    background-color: var(--background);
 }
 
 /* Appointments Table */
 .appointments-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--background-light);
+    background-color: var(--primary);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -349,12 +351,12 @@ th, td {
 .appointments-table td {
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-color);
+    border-bottom: 1px solid var(--dark);
+    color: var(--primary-light);
 }
 
 .appointments-table th {
-    background-color: var(--background-dark);
+    background-color: var(--background);
     font-weight: 600;
 }
 
@@ -364,7 +366,7 @@ th, td {
 }
 
 .appointments-table tbody tr:hover {
-    background-color: var(--border-color);
+    background-color: var(--background);
 }
 
 /* Status Badges */
@@ -414,12 +416,12 @@ th, td {
 
 .btn-approve:hover {
     background-color: var(--success-color);
-    color: var(--text-color);
+    color: var(--primary-light);
 }
 
 .btn-cancel:hover {
     background-color: var(--danger-color);
-    color: var(--text-color);
+    color: var(--primary-light);
 }
 
 /* Modal Styles */
@@ -444,7 +446,7 @@ th, td {
 }
 
 .modal-content {
-    background-color: var(--background-light);
+    background-color: var(--primary);
     border-radius: 8px;
     width: 90%;
     max-width: 600px;
@@ -460,7 +462,7 @@ th, td {
 
 .modal-header {
     padding: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -468,7 +470,7 @@ th, td {
 
 .modal-header h2 {
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: var(--primary-light);
 }
 
 .close-modal {
@@ -481,7 +483,7 @@ th, td {
 }
 
 .close-modal:hover {
-    color: var(--text-color);
+    color: var(--primary-light);
 }
 
 .modal-body {
@@ -495,7 +497,7 @@ th, td {
 
 .appointment-info h3 {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: var(--primary-light);
     margin-bottom: 1rem;
 }
 
@@ -509,11 +511,11 @@ th, td {
 .info-item i {
     width: 20px;
     margin-right: 1rem;
-    color: #3b82f6;
+    color: var(--primary);
 }
 
 .appointment-message {
-    background-color: var(--background-dark);
+    background-color: var(--background);
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1.5rem;
@@ -521,13 +523,13 @@ th, td {
 
 .appointment-message h3 {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: var(--primary-light);
     margin-bottom: 0.8rem;
 }
 
 .modal-actions {
     padding: 1.5rem;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--dark);
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
@@ -541,24 +543,24 @@ th, td {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #e2e8f0;
+    color: var(--primary-light);
     font-weight: 500;
 }
 
 .form-group input {
     width: 100%;
     padding: 0.8rem;
-    border: 1px solid #334155;
+    border: 1px solid var(--dark);
     border-radius: 8px;
-    background-color: #1e293b;
-    color: #e2e8f0;
+    background-color: var(--primary);
+    color: var(--primary-light);
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #3b82f6;
+    border-color: var(--primary);
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
 }
 
@@ -576,12 +578,12 @@ th, td {
     right: 1rem;
     padding: 1rem 2rem;
     border-radius: 8px;
-    color: var(--text-color);
+    color: var(--primary-light);
     font-weight: 500;
     transform: translateX(120%);
     transition: transform 0.3s ease-in-out;
     z-index: 1001;
-    background-color: var(--background-light);
+    background-color: var(--primary);
     box-shadow: var(--shadow);
 }
 
@@ -598,7 +600,7 @@ th, td {
 }
 
 .notification.info {
-    border-left: 4px solid #3b82f6;
+    border-left: 4px solid var(--primary);
 }
 
 /* Responsive Design */
@@ -646,8 +648,8 @@ th, td {
 
 /* Accept and Reject Button Styling */
 .accept-btn {
-    background: #10b981;
-    color: #fff;
+    background: var(--success-color);
+    color: var(--primary-light);
     border: none;
     border-radius: 6px;
     padding: 0.35rem 0.9rem;
@@ -664,13 +666,13 @@ th, td {
     gap: 0.3rem;
 }
 .accept-btn:hover, .accept-btn:focus {
-    background: #047857;
+    background: var(--success-color);
     transform: translateY(-1px) scale(1.03);
 }
 
 .reject-btn {
-    background: #ef4444;
-    color: #fff;
+    background: var(--danger-color);
+    color: var(--primary-light);
     border: none;
     border-radius: 6px;
     padding: 0.35rem 0.9rem;
@@ -687,7 +689,7 @@ th, td {
     gap: 0.3rem;
 }
 .reject-btn:hover, .reject-btn:focus {
-    background: #991b1b;
+    background: var(--danger-color);
     transform: translateY(-1px) scale(1.03);
 }
 
@@ -703,19 +705,19 @@ th, td {
     text-transform: capitalize;
 }
 .status-badge.status-pending {
-    background-color: #facc15;
-    color: #7c5700;
-    border: 1px solid #fbbf24;
+    background-color: var(--warning-color);
+    color: var(--background);
+    border: 1px solid var(--warning-color);
 }
 .status-badge.status-approved {
-    background-color: #22c55e;
-    color: #fff;
-    border: 1px solid #16a34a;
+    background-color: var(--success-color);
+    color: var(--primary-light);
+    border: 1px solid var(--success-color);
 }
 .status-badge.status-rejected {
-    background-color: #ef4444;
-    color: #fff;
-    border: 1px solid #b91c1c;
+    background-color: var(--danger-color);
+    color: var(--primary-light);
+    border: 1px solid var(--danger-color);
 }
 
 /* Profile Dialog Styles */
@@ -734,13 +736,13 @@ th, td {
     position: fixed;
     top: 60px;
     right: 40px;
-    background: #1e293b;
+    background: var(--background);
     border-radius: 12px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     padding: 2rem 2.5rem 1.5rem 2.5rem;
     min-width: 320px;
     z-index: 4000;
-    color: #e2e8f0;
+    color: var(--primary-light);
 }
 .profile-dialog.active {
     display: block;
@@ -753,30 +755,30 @@ th, td {
 }
 .profile-dialog-header h3 {
     margin: 0;
-    color: #7dd3fc;
+    color: var(--primary);
     font-size: 1.3rem;
 }
 .profile-dialog-close {
     background: none;
     border: none;
-    color: #64748b;
+    color: var(--text-light);
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.2s;
 }
 .profile-dialog-close:hover {
-    color: #e2e8f0;
+    color: var(--primary-light);
 }
 .profile-info-item {
     margin-bottom: 1.1rem;
 }
 .profile-info-item label {
-    color: #60a5fa;
+    color: var(--primary);
     font-size: 0.95rem;
     margin-right: 0.5rem;
 }
 .profile-info-item span {
-    color: #e2e8f0;
+    color: var(--primary-light);
     font-size: 1.05rem;
     font-weight: 500;
 } 
